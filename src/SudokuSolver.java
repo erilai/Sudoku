@@ -36,11 +36,28 @@ public class SudokuSolver {
         }
 
         // create the list of sets for each row (this.rows)
-        //
-
-        // create the list of sets for each col (this.cols)
-        // ...
-
+        this.rows = new ArrayList<Set<Integer>>();
+        for(int n = 0; n < this.grid.length; n = 0)
+        {
+            Set<Integer> temp = new HashSet<Integer>();
+            for(int i = 0; i < this.grid[0].length; i++)
+            {
+                temp.add(grid[n][i]);
+            }
+            this.rows.add(temp);
+        }
+       
+       // create the list of sets for each col (this.cols)
+       for(int n = 0; n < this.grid[0].length; n = 0)
+       {
+           Set<Integer> temp = new HashSet<Integer>();
+           for(int i = 0; i < this.grid.length; i++)
+           {
+               temp.add(grid[i][n]);
+           }
+           this.cols.add(temp);
+       }
+       
         // create the list of sets for each square (this.squares)
         /* the squares are added to the list row-by-row:
             0 1 2
